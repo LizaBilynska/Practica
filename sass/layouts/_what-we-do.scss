@@ -1,0 +1,59 @@
+.what-we-do__section {
+    display: none;
+
+    @include desktop {
+        display: flex;
+        padding-bottom: 94px;
+        padding-top: 94px;
+    }
+
+}
+
+.what-we-do {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.7;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+
+.what-we-do__list {
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+
+    & .what-we-do__photo {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+}
+
+
+.what-we-do__div {
+    position: relative;
+}
+
+.what-we-do__wrap {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--background-colour);
+    background-color: rgba(47, 48, 58, 0.8);
+    padding-top: 27px;
+    width: 370px;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+
+}

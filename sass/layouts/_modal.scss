@@ -1,0 +1,211 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 48, 48, 0.467);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms;
+}
+
+.modal {
+    position: absolute;
+    width: calc(100% - 30px);
+    min-height: 609px;
+    background-color: var(--background-colour);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms;
+    padding: 40px;
+
+    @include tablet {
+        width: 450px;
+        min-height: 609px;
+    }
+
+    @include desktop {
+        width: 528px;
+        min-height: 581px;
+    }
+
+    .backdrop.is-hidden & {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+.modal-close {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+        fill: var(--accent-text-colour);
+    }
+}
+
+.modal-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-colour);
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.form-input {
+    padding-left: 42px;
+    padding-right: 42px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    font-size: 12px;
+
+    &:focus {
+        outline-color: var(--accent-text-colour);
+    }
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.modal-form-p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--light-grey-colour);
+}
+
+.form-input-comment {
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 16px;
+    padding-top: 12px;
+    resize: none;
+
+    &:focus {
+        outline-color: var(--accent-text-colour);
+    }
+
+    &::placeholder {
+        position: absolute;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+    }
+}
+
+.modal-form-svg {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .form-input:focus+& {
+        fill: var(--accent-text-colour);
+    }
+}
+
+.button-field {
+    text-align: center;
+}
+
+
+.send-btn {
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+
+}
+
+.check-text {
+    display: flex;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--light-grey-colour);
+    align-items: center;
+    justify-content: center;
+
+    @include desktop {
+        font-size: 14px;
+    }
+
+    span {
+        width: 16px;
+        height: 15px;
+        border: 2px solid var(--primary-text-colour);
+        border-radius: 3px;
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:focus {
+            border: 2px solid var(--accent-text-colour);
+        }
+
+        .input-check:checked+& {
+            background-color: var(--accent-text-colour);
+            border: none;
+        }
+    }
+}
+
+
+
+.check-icon {
+    fill: transparent;
+
+    .input-check:checked+.check-text & {
+        fill: var(--background-colour);
+        border: none;
+    }
+}
+
+.link-input {
+    color: var(--accent-text-colour);
+    text-decoration: underline var(--accent-text-colour);
+}

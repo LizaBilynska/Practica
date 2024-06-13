@@ -1,0 +1,101 @@
+.hero {
+    background-image: var(--bg-gradient), url(../images/hero-mob.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 118px 60px;
+
+    @include retina {
+        background-image: var(--bg-gradient), url(../images/hero-mob-2x.jpg);
+
+    }
+
+    @include tablet {
+        padding: 118px 204px;
+        background-image: var(--bg-gradient), url(../images/hero-tab.jpg);
+
+        @include retina {
+            background-image: var(--bg-gradient), url(../images/hero-tab-2x.jpg);
+
+        }
+    }
+
+    @include desktop {
+        padding-bottom: 200px;
+        padding-top: 200px;
+        background-size: 1600px 600px;
+        background-image: var(--bg-gradient), url(../images/hero.jpg);
+
+        @include retina {
+            background-image: var(--bg-gradient), url(../images/hero-2x.jpg);
+
+
+        }
+    }
+
+}
+
+
+.order__button {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.875;
+    cursor: pointer;
+    background-color: var(--accent-text-colour);
+    color: var(--background-colour);
+    border: 1px transparent;
+    // padding: 10px 32px;
+    padding: 10px 24px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        background: #188CE8;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    }
+
+    @include desktop {
+        padding: 10px 32px;
+        min-width: 216px;
+    }
+
+}
+
+
+.decidions {
+    font-weight: 900;
+    // font-size: 44px;
+    font-size: 21px;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--background-colour);
+    margin-top: 0px;
+    margin-bottom: 30px;
+
+    @include hero__mobile-tablet {
+        font-size: 26px;
+    }
+
+    @include desktop {
+        font-size: 44px;
+    }
+}
+
+.hero__container {
+    // width: 696px;
+    width: 100%;
+
+    @include hero__mobile-tablet {
+        width: 360px;
+    }
+
+    @include desktop {
+        width: 696px;
+    }
+
+}
